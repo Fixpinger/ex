@@ -32,7 +32,7 @@ public class Calc2 {
                 if (roman) {
                     a1 = romanConvert2.romanToArabic(a);
                     b1 = romanConvert2.romanToArabic(b);
-                    if (a1 > 10 || b1 > 10 || a1 < 1 || b1 < 1){
+                    if (a1 > 11 || b1 > 11 || a1 < 1 || b1 < 1){
                         throw new ArithmeticException("Числа только от 1 до 10");
                     }
                 }
@@ -40,7 +40,7 @@ public class Calc2 {
                 if (integer) {
                     a1 = Integer.parseInt(a);
                     b1 = Integer.parseInt(b);
-                    if (a1 > 10 || b1 > 10 || a1 < 1 || b1 < 1){
+                    if (a1 > 11 || b1 > 11 || a1 < 1 || b1 < 1){
                         throw new ArithmeticException("Числа только от 1 до 10");
                     }
                 }
