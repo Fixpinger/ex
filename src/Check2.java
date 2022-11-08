@@ -11,18 +11,26 @@ public class Check2 {
         String[] arr1 = a.split("");
         Integer[] arrInt = new Integer[arr1.length];
         String[] arr2 = b.split("");
-        Integer[] arr2Int = new Integer[arr1.length];
+        Integer[] arr2Int = new Integer[arr2.length];
 
         int i;
         for (i = 0; i < arr1.length; ++i) {
             arrInt[i] = (Integer) romanConvert2.mapNum.get(arr1[i]);
+            if (arr1[i].equals("0")){
+                arrInt[i] = 0;
+                continue;
+            }
             if (arrInt[i] == null) {
                 check = false;
             }
         }
 
         for (i = 0; i < arr2.length; ++i) {
-            arr2Int[i] = (Integer) romanConvert2.mapNum.get(arr1[i]);
+            if (arr2[i].equals("0")){
+                arr2Int[i] = 0;
+                continue;
+            }
+            arr2Int[i] = (Integer) romanConvert2.mapNum.get(arr2[i]);
             if (arr2Int[i] == null) {
                 check = false;
             }
