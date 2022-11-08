@@ -32,56 +32,41 @@ public class Calc2 {
                 if (roman) {
                     a1 = romanConvert2.romanToArabic(a);
                     b1 = romanConvert2.romanToArabic(b);
+                    if (a1 > 10 || b1 > 10 || a1 < 1 || b1 < 1){
+                        throw new ArithmeticException("Числа только от 1 до 10");
+                    }
                 }
 
                 if (integer) {
                     a1 = Integer.parseInt(a);
                     b1 = Integer.parseInt(b);
+                    if (a1 > 10 || b1 > 10 || a1 < 1 || b1 < 1){
+                        throw new ArithmeticException("Числа только от 1 до 10");
+                    }
                 }
 
                 String var11 = expr[1];
-                byte var12 = -1;
-                switch(var11.hashCode()) {
-                    case 42:
-                        if (var11.equals("*")) {
-                            var12 = 3;
-                        }
-                        break;
-                    case 43:
-                        if (var11.equals("+")) {
-                            var12 = 0;
-                        }
-                    case 44:
-                    case 46:
-                    default:
-                        break;
-                    case 45:
-                        if (var11.equals("-")) {
-                            var12 = 1;
-                        }
-                        break;
-                    case 47:
-                        if (var11.equals("/")) {
-                            var12 = 2;
-                        }
-                }
 
-                switch(var12) {
-                    case 0:
+
+                switch(var11) {
+                    case "+":
                         arifExpr = a1 + b1;
                         break;
-                    case 1:
+                    case "-":
                         if (roman && a1 - b1 < 0) {
                             throw new Exception("т.к. в римской системе нет отрицательных чисел");
                         }
 
                         arifExpr = a1 - b1;
                         break;
-                    case 2:
+                    case "/":
                         arifExpr = a1 / b1;
                         break;
-                    case 3:
+                    case "*":
                         arifExpr = a1 * b1;
+
+                    default: throw new ArithmeticException("Только сложение, выяитание, умножение и деление");
+
                 }
 
                 if (roman) {
