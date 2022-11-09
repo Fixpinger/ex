@@ -64,7 +64,7 @@ public class Calc2 {
                         break;
                     case "*":
                         arifExpr = a1 * b1;
-
+                        break;
                     default: throw new ArithmeticException("Только сложение, выяитание, умножение и деление");
 
                 }
