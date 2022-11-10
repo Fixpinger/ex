@@ -4,7 +4,9 @@
 //
 
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class romanConvert2 {
@@ -81,7 +83,10 @@ public class romanConvert2 {
         }
     }
 
-    public static void arabicToRoman(int num) {
+    public static ArrayList<String> arabicToRoman(int num) {
+
+        ArrayList<String> list = new ArrayList<String>();
+
         String s = String.valueOf(num);
         String[] arrs = s.split("");
         Integer[] digits = new Integer[arrs.length];
@@ -102,7 +107,8 @@ public class romanConvert2 {
                 roman[i] = (String)mapArabic.get(digits[i]);
 
                 for(b = 0; b < Integer.parseInt(arrs[i]); ++b) {
-                    System.out.print(roman[i]);
+                    //System.out.print(roman[i]);
+                    list.add((roman[i]));
                 }
             } else {
                 int a;
@@ -112,25 +118,30 @@ public class romanConvert2 {
                     a = digits[i] * Integer.parseInt(arrs[i]) + digits[i];
                     var10000 = System.out;
                     var10001 = (String)mapArabic.get(digits[i]);
-                    var10000.print(var10001 + (String)mapArabic.get(a));
+                    //var10000.print(var10001 + (String)mapArabic.get(a));
+                    list.add((mapArabic.get(digits[i])));
                 } else if (ind == digits[i] * 9) {
                     a = digits[i] * Integer.parseInt(arrs[i]) + digits[i];
                     var10000 = System.out;
                     var10001 = (String)mapArabic.get(digits[i]);
-                    var10000.print(var10001 + (String)mapArabic.get(a));
+                    //var10000.print(var10001 + (String)mapArabic.get(a));
+                    list.add(mapArabic.get(a));
                 } else if (Integer.parseInt(arrs[i]) == 5) {
-                    System.out.print((String)mapArabic.get(digits[i] * Integer.parseInt(arrs[i])));
+                    //System.out.print((String)mapArabic.get(digits[i] * Integer.parseInt(arrs[i])));
+                    list.add(mapArabic.get(digits[i]*Integer.parseInt(arrs[i])));
                 } else if (Integer.parseInt(arrs[i]) > 5 && Integer.parseInt(arrs[i]) < 9) {
-                    System.out.print((String)mapArabic.get(digits[i] * 5));
+                   // System.out.print((String)mapArabic.get(digits[i] * 5));
+                    list.add(mapArabic.get(digits[i] * 5));
                     b = Integer.parseInt(arrs[i]) - 5 * digits[i];
 
                     for(int j = 0; j < Integer.parseInt(arrs[i]) - 5; ++j) {
-                        System.out.print((String)mapArabic.get(digits[i]));
+                     //   System.out.print((String)mapArabic.get(digits[i]));
+                        list.add(mapArabic.get(digits[i]));
                     }
                 }
             }
         }
-
+        return list;
     }
 
 
