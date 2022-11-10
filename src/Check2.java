@@ -39,7 +39,11 @@ public class Check2 {
         for (int j = 0; j < arr1.length; j++) {
             String c = arr1[j];
             count = 0;
-            for (int k = 1; k < arr1.length; k++) {
+            int k = 0;
+            if (arr1[0].equals("-")){
+                k = 1;
+            }
+            for (k = 0; k < arr1.length; k++) {
                 if (c.equals(arr1[k])){
                     count++;
                     if (count > 3){
