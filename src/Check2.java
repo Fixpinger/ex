@@ -68,8 +68,6 @@ public class Check2 {
                 }
             }
         }
-
-
         if (!arr1[0].equals("-") && !arr2[0].equals("-")) {
             return check;
         } else {
