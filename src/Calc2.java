@@ -63,8 +63,8 @@ public class Calc2 {
                         arifExpr = a1 + b1;
                         break;
                     case "-":
-                        if (roman && a1 - b1 < 0) {
-                            throw new Exception("т.к. в римской системе нет отрицательных чисел");
+                        if (roman && a1 - b1 < 1) {
+                            throw new Exception("т.к. в Римской системе нет отрицательных чисел и нуля");
                         }
                         arifExpr = a1 - b1;
                         break;
