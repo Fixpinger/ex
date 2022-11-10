@@ -4,8 +4,6 @@
 //
 
 public class Check2 {
-
-
     public static boolean Check(String a, String b) throws Exception {
         boolean check = true;
         String[] arr1 = a.split("");
@@ -78,9 +76,6 @@ public class Check2 {
             throw new Exception("т.к. в римской системе нет отрицательных чисел");
         }
     }
-
-
-
     public static boolean Check2(String a, String b) {
         try {
             Integer.parseInt(a);
