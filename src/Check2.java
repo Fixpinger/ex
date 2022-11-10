@@ -58,7 +58,7 @@ public class Check2 {
         for (int j = 0; j < arr2.length; j++) {
             String c = arr2[j];
             count = 0;
-            for (int k = 1; k < arr2.length - 1; k++) {
+            for (int k = 0; k < arr2.length; k++) {
                 if (c.equals(arr2[k])){
                     count++;
                     if (count > 3){
