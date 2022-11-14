@@ -117,15 +117,17 @@ public class romanConvert2 {
                 if (ind == digits[i] * 4) {
                     a = digits[i] * Integer.parseInt(arrs[i]) + digits[i];
                     var10000 = System.out;
-                    var10001 = (String)mapArabic.get(digits[i]);
+                    var10001 = (String)mapArabic.get(a);
                     //var10000.print(var10001 + (String)mapArabic.get(a));
                     list.add((mapArabic.get(digits[i])));
+                    list.add((mapArabic.get(a)));
                 } else if (ind == digits[i] * 9) {
                     a = digits[i] * Integer.parseInt(arrs[i]) + digits[i];
                     var10000 = System.out;
                     var10001 = (String)mapArabic.get(digits[i]);
                     //var10000.print(var10001 + (String)mapArabic.get(a));
-                    list.add(mapArabic.get(a));
+                    list.add((mapArabic.get(digits[i])));
+                    list.add((mapArabic.get(a)));
                 } else if (Integer.parseInt(arrs[i]) == 5) {
                     //System.out.print((String)mapArabic.get(digits[i] * Integer.parseInt(arrs[i])));
                     list.add(mapArabic.get(digits[i]*Integer.parseInt(arrs[i])));
